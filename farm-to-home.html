@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIYAM KRISHNA GARI RICE | బియ్యం కృష్ణ గారి రైస్</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1a472a;
+            --primary-light: #2d5a3f;
+            --primary-dark: #0f2d1a;
+            --gold: #d4a574;
+            --gold-light: #e6c9a8;
+            --gold-dark: #b8956a;
+            --cream: #faf8f5;
+            --cream-dark: #f0ebe3;
+            --white: #ffffff;
+            --black: #1a1a1a;
+            --gray: #666666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--cream-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.5s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 71, 42, 0.98);
+            padding: 0.8rem 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .logo-text { color: var(--white); }
+        .logo-text h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        .logo-text p {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: 0.75rem;
+            color: var(--gold-light);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0.3rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            padding: 0.7rem 1.3rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-menu a:hover { background: rgba(255,255,255,0.15); }
+        .nav-menu a.active { background: var(--gold); color: var(--primary-dark); }
+        .nav-cta {
+            background: var(--white) !important;
+            color: var(--primary) !important;
+            font-weight: 600 !important;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, #0a1f10 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23ffffff' fill-opacity='0.03'/%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
+            top: 50%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.5; }
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 3rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content { animation: fadeUp 1s ease-out; }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(212, 165, 116, 0.2);
+            border: 1px solid var(--gold);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-tag .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 5.5vw, 4.5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero-title .highlight {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .hero-title .telugu {
+            display: block;
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            font-weight: 500;
+            color: var(--gold-light);
+            margin-top: 0.8rem;
+            font-style: normal;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .hero-feature-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(212, 165, 116, 0.2);
+            border: 1px solid rgba(212, 165, 116, 0.5);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .hero-feature-text {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .hero-feature-text span {
+            display: block;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            font-weight: 400;
+        }
+
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            background: var(--gold-light);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Hero Visual - Clean without floating boxes */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeUp 1s ease-out 0.3s both;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--gold), transparent, var(--gold));
+            border-radius: 32px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .hero-card-emoji {
+            font-size: 6rem;
+            display: block;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hero-card-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-card-subtitle {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-card-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        .hero-stat { text-align: center; }
+        .hero-stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Section Styles */
+        .section { padding: 5rem 2rem; position: relative; }
+        
+        /* Rice section - Clean white */
+        .section-white { background: var(--white); }
+        
+        /* Urad section - Warm beige tone */
+        .section-urad {
+            background: linear-gradient(180deg, #f5efe6 0%, #ebe3d6 100%);
+        }
+        
+        /* Pickles section - Light sage green */
+        .section-pickles {
+            background: linear-gradient(180deg, #f0f4ef 0%, #e5ebe3 100%);
+        }
+        
+        /* Process sections - Earthy warm tones */
+        .section-warm {
+            background: linear-gradient(180deg, #f8f3eb 0%, #f0e8dc 100%);
+        }
+        
+        .section-earthy {
+            background: linear-gradient(180deg, #ece5d8 0%, #e2d9ca 100%);
+        }
+
+        .section-dark {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(26, 71, 42, 0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-dark .section-tag {
+            background: rgba(212, 165, 116, 0.2);
+            color: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-title .highlight {
+            color: var(--gold-dark);
+            font-style: italic;
+        }
+
+        .section-dark .section-title { color: var(--white); }
+        .section-dark .section-title .highlight { color: var(--gold); }
+        .section-desc { color: var(--gray); font-size: 1rem; }
+        .section-dark .section-desc { color: rgba(255,255,255,0.7); }
+
+        /* Process Image */
+        .process-image {
+            max-width: 1100px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .process-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Product Cards */
+        .products-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.5s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 180px;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .product-content { padding: 1.5rem; }
+
+        .product-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .product-telugu {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            color: var(--gold-dark);
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-desc {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .product-sizes { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+        .size-tag {
+            background: var(--cream);
+            color: var(--primary);
+            padding: 0.3rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        /* Pickle Grid */
+        .pickle-container { max-width: 1100px; margin: 0 auto; }
+        .pickle-category { margin-bottom: 2.5rem; }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid rgba(26, 71, 42, 0.15);
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .category-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .pickle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 0.8rem;
+        }
+
+        .pickle-item {
+            background: var(--white);
+            border: 1px solid rgba(26, 71, 42, 0.1);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pickle-item:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(26, 71, 42, 0.1);
+        }
+
+        .pickle-item .emoji { font-size: 1.4rem; }
+        .pickle-item .telugu {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        .pickle-item .english {
+            font-size: 0.7rem;
+            color: var(--gray);
+        }
+
+        /* Karam Grid */
+        .karam-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.2rem;
+        }
+
+        .karam-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 1rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .karam-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+
+        .karam-card .emoji {
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+
+        .karam-card .telugu {
+            font-family: 'Noto Sans Telugu', sans-serif;
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .karam-card .english {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Contact Section - Premium gradient background */
+        .contact-section {
+            background: linear-gradient(135deg, #2c5f3f 0%, #1a472a 50%, #0f2d1a 100%);
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a574' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .contact-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            color: var(--white);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.08);
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--gold);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 1rem;
+        }
+
+        .contact-text h4 {
+            font-weight: 600;
+            margin-bottom: 0.1rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-text a,
+        .contact-text p {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .contact-text a:hover { color: var(--gold); }
+
+        .delivery-section { margin-top: 1.5rem; }
+        .delivery-section h4 {
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .delivery-section h4 i { color: var(--gold); }
+
+        .areas-grid { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+        .area-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 0.35rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+        }
+
+        .area-tag:hover {
+            background: var(--gold);
+            color: var(--primary-dark);
+        }
+
+        .social-links { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .social-btn:hover { transform: translateY(-3px); }
+        .social-btn.fb { background: #1877F2; }
+        .social-btn.ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+        .social-btn.li { background: #0A66C2; }
+        .social-btn.yt { background: #FF0000; }
+
+        /* Order Form - Premium styling with better background */
+        .order-form {
+            background: linear-gradient(145deg, #fffdf9 0%, #f8f4ed 100%);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.2);
+            border: 3px solid var(--gold);
+        }
+
+        .order-form h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--primary);
+        }
+
+        .order-form > p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group { margin-bottom: 1rem; }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background: var(--white);
+            border: 2px solid #e8e0d5;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 71, 42, 0.1);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a472a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.8rem center;
+            background-size: 1rem;
+            padding-right: 2.5rem;
+        }
+
+        .form-group textarea { min-height: 70px; resize: vertical; }
+
+        /* Product Selectors */
+        .products-selectors {
+            background: linear-gradient(135deg, #f5efe6 0%, #ebe3d6 100%);
+            border-radius: 16px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border: 2px solid #e0d6c8;
+        }
+
+        .products-selectors-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .selector-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        .selector-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 0.8rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .selector-item:hover,
+        .selector-item:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 5px 20px rgba(26, 71, 42, 0.1);
+        }
+
+        .selector-item label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+
+        .selector-item label .emoji { font-size: 1.1rem; }
+
+        .selector-item select {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            background: #faf8f5;
+            border: 1px solid #e0d6c8;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.8rem;
+            color: var(--black);
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231a472a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 0.8rem;
+            padding-right: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .selector-item select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: var(--white);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(26, 71, 42, 0.4);
+        }
+
+        /* WhatsApp Float */
+        .wa-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+        }
+
+        .wa-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: #25D366;
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+            transition: all 0.4s ease;
+            animation: waPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes waPulse {
+            0%, 100% { box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 10px 60px rgba(37, 211, 102, 0.6); }
+        }
+
+        .wa-btn:hover { transform: scale(1.05); }
+        .wa-btn i { font-size: 1.4rem; }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .footer-logo span { color: var(--gold); }
+
+        .footer-tagline {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover { color: var(--gold); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .karam-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 7rem;
+            }
+            .hero-content { order: 2; }
+            .hero-visual { order: 1; margin-bottom: 2rem; }
+            .hero-desc { margin: 0 auto 2rem; }
+            .hero-features { justify-content: center; }
+            .hero-buttons { justify-content: center; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-container { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .nav-menu.active { display: flex; }
+            .nav-menu a { padding: 1rem; text-align: center; }
+            .menu-btn { display: block; }
+            .section { padding: 3rem 1.5rem; }
+            .nav-container { padding: 0 1.5rem; }
+            .hero-features { flex-direction: column; gap: 1rem; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
+            .products-grid { grid-template-columns: 1fr; }
+            .karam-grid { grid-template-columns: repeat(2, 1fr); }
+            .form-row { grid-template-columns: 1fr; }
+            .selector-grid { grid-template-columns: 1fr; }
+            .wa-btn span { display: none; }
+            .wa-btn { padding: 1rem; border-radius: 50%; }
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        section[id] { scroll-margin-top: 80px; }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">🌾</div>
+                <div class="logo-text">
+                    <h1>BIYAM KRISHNA GARI</h1>
+                    <p>బియ్యం కృష్ణ గారి రైస్</p>
+                </div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#rice">Rice</a></li>
+                <li><a href="#urad">Urad</a></li>
+                <li><a href="#pickles">Pickles</a></li>
+                <li><a href="#karam">Karam</a></li>
+                <li><a href="#contact" class="nav-cta">Order Now</a></li>
+            </ul>
+            <button class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero - Clean without floating boxes -->
+    <section class="hero" id="home">
+        <div class="hero-glow"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tag"><span class="dot"></span> Farm Fresh • Direct Delivery</div>
+                <h1 class="hero-title">
+                    Pure <span class="highlight">Village Rice</span> & Traditional Telugu Foods
+                    <span class="telugu">బియ్యం కృష్ణ గారి రైస్</span>
+                </h1>
+                <p class="hero-desc">Experience authentic village-grown rice, hand-milled to perfection. Fresh urad dal, homemade pickles & aromatic karam powders delivered to your doorstep.</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <div class="hero-feature-icon">✨</div>
+                        <div class="hero-feature-text">100% Pure<span>No Mixing</span></div>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="hero-feature-icon">🚫</div>
+                        <div class="hero-feature-text">No Middlemen<span>Direct Farm</span></div>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="hero-feature-icon">🚚</div>
+                        <div class="hero-feature-text">Free Delivery<span>Hyderabad</span></div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary"><i class="fas fa-shopping-bag"></i> Order Now</a>
+                    <a href="https://wa.me/917993822600?text=Hi! I want to order from BIYAM KRISHNA GARI RICE" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <span class="hero-card-emoji">🌾</span>
+                    <h2 class="hero-card-title">Premium BPT Sannalu</h2>
+                    <p class="hero-card-subtitle">ప్రీమియం బీపీటీ సన్నాలు</p>
+                    <div class="hero-card-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">500+</div>
+                            <div class="hero-stat-label">Happy Families</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">50+</div>
+                            <div class="hero-stat-label">Products</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rice Section -->
+    <section class="section section-white" id="rice">
+        <div class="section-header reveal">
+            <span class="section-tag">🌾 Our Specialty</span>
+            <h2 class="section-title">Premium <span class="highlight">BPT Sannalu</span> Rice</h2>
+            <p class="section-desc">Hand-harvested from our village paddy fields, custom milled to your preference</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card reveal">
+                <div class="product-image"><span class="product-badge">POPULAR</span>🍚</div>
+                <div class="product-content">
+                    <h3 class="product-title">Brown Rice</h3>
+                    <p class="product-telugu">బ్రౌన్ రైస్ (అన్‌పాలిష్డ్)</p>
+                    <p class="product-desc">Whole grain rice with bran intact. Rich in fiber & vitamins.</p>
+                    <div class="product-sizes">
+                        <span class="size-tag">5 KG</span>
+                        <span class="size-tag">25 KG</span>
+                        <span class="size-tag">50 KG</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image" style="background: linear-gradient(135deg, #f5ede4 0%, #e8dfd3 100%);"><span class="product-badge">BESTSELLER</span>🌾</div>
+                <div class="product-content">
+                    <h3 class="product-title">Semi Polish Rice</h3>
+                    <p class="product-telugu">సెమీ పాలిష్ రైస్</p>
+                    <p class="product-desc">Retains some bran for nutrition with softer texture.</p>
+                    <div class="product-sizes">
+                        <span class="size-tag">5 KG</span>
+                        <span class="size-tag">25 KG</span>
+                        <span class="size-tag">50 KG</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image" style="background: linear-gradient(135deg, #fffef9 0%, #f5f0e6 100%);"><span class="product-badge">PREMIUM</span>✨</div>
+                <div class="product-content">
+                    <h3 class="product-title">Full Polish Rice</h3>
+                    <p class="product-telugu">ఫుల్ పాలిష్ రైస్</p>
+                    <p class="product-desc">Completely polished, pure white. Perfect for biryanis.</p>
+                    <div class="product-sizes">
+                        <span class="size-tag">5 KG</span>
+                        <span class="size-tag">25 KG</span>
+                        <span class="size-tag">50 KG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rice Process -->
+    <section class="section section-warm">
+        <div class="section-header reveal">
+            <span class="section-tag">🚜 Our Process</span>
+            <h2 class="section-title">From Our Fields to <span class="highlight">Your Home</span></h2>
+            <p class="section-desc">Pure quality, honest process, farmer to consumer</p>
+        </div>
+        <div class="process-image reveal">
+            <img src="rice-process.png" alt="Rice Process">
+        </div>
+    </section>
+
+    <!-- Urad Section - Warm beige background -->
+    <section class="section section-urad" id="urad">
+        <div class="section-header reveal">
+            <span class="section-tag">🫘 Premium Pulses</span>
+            <h2 class="section-title">Fresh <span class="highlight">Urad Dal</span></h2>
+            <p class="section-desc">Freshly harvested, perfect for idli, dosa & vada preparations</p>
+        </div>
+        <div class="products-grid" style="max-width: 750px;">
+            <div class="product-card reveal">
+                <div class="product-image"><span class="product-badge">IDLI & DOSA</span>🫘</div>
+                <div class="product-content">
+                    <h3 class="product-title">Urad Dal (Split)</h3>
+                    <p class="product-telugu">మినుములు (పప్పు)</p>
+                    <p class="product-desc">Premium split urad for soft idlis and crispy dosas.</p>
+                    <div class="product-sizes">
+                        <span class="size-tag">1 KG</span>
+                        <span class="size-tag">2 KG</span>
+                        <span class="size-tag">5 KG</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-image" style="background: linear-gradient(135deg, #e8e0d5 0%, #d5c9bb 100%);"><span class="product-badge">FOR VADA</span>🥣</div>
+                <div class="product-content">
+                    <h3 class="product-title">Urad Round (Whole)</h3>
+                    <p class="product-telugu">మినుములు (గుండ్రం)</p>
+                    <p class="product-desc">Whole black urad. Perfect for crispy vadas.</p>
+                    <div class="product-sizes">
+                        <span class="size-tag">1 KG</span>
+                        <span class="size-tag">2 KG</span>
+                        <span class="size-tag">5 KG</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urad Process -->
+    <section class="section section-earthy">
+        <div class="section-header reveal">
+            <span class="section-tag">🌱 Traditional Process</span>
+            <h2 class="section-title">From Our Polam to <span class="highlight">Your Kitchen</span></h2>
+            <p class="section-desc">Organic harvest, traditional milling, pure quality</p>
+        </div>
+        <div class="process-image reveal">
+            <img src="urad-process.png" alt="Urad Process">
+        </div>
+    </section>
+
+    <!-- Pickles Section - Light sage green background -->
+    <section class="section section-pickles" id="pickles">
+        <div class="section-header reveal">
+            <span class="section-tag">🥒 Traditional Taste</span>
+            <h2 class="section-title">Homemade <span class="highlight">Pickles</span></h2>
+            <p class="section-desc">Authentic Telugu recipes passed down through generations</p>
+        </div>
+        <div class="pickle-container">
+            <div class="pickle-category reveal">
+                <div class="category-header">
+                    <div class="category-icon">🥭</div>
+                    <h3 class="category-title">Mango Pickles</h3>
+                </div>
+                <div class="pickle-grid">
+                    <div class="pickle-item"><span class="emoji">🥭</span><div><p class="telugu">ఆవకాయ</p><p class="english">Avakaya</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🥭</span><div><p class="telugu">మాగాయ</p><p class="english">Magaya</p></div></div>
+                </div>
+            </div>
+            <div class="pickle-category reveal">
+                <div class="category-header">
+                    <div class="category-icon">🥕</div>
+                    <h3 class="category-title">Vegetable Pickles</h3>
+                </div>
+                <div class="pickle-grid">
+                    <div class="pickle-item"><span class="emoji">🍋</span><div><p class="telugu">నిమ్మకాయ</p><p class="english">Lemon</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🫒</span><div><p class="telugu">ఉసిరికాయ</p><p class="english">Gooseberry</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🍅</span><div><p class="telugu">టమాట</p><p class="english">Tomato</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🥒</span><div><p class="telugu">బీరకాయ</p><p class="english">Ridge Gourd</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🥒</span><div><p class="telugu">దొండకాయ</p><p class="english">Ivy Gourd</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🌿</span><div><p class="telugu">గోంగూర</p><p class="english">Gongura</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🍃</span><div><p class="telugu">కరివేపాకు</p><p class="english">Curry Leaves</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🥕</span><div><p class="telugu">ముల్లంగి</p><p class="english">Radish</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🥒</span><div><p class="telugu">కాకరకాయ</p><p class="english">Bitter Gourd</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🍆</span><div><p class="telugu">వంకాయ</p><p class="english">Brinjal</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🌶️</span><div><p class="telugu">ఎండు మిరప</p><p class="english">Red Chilli</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🥬</span><div><p class="telugu">మునగకాయ</p><p class="english">Drumstick</p></div></div>
+                </div>
+            </div>
+            <div class="pickle-category reveal">
+                <div class="category-header">
+                    <div class="category-icon">🍗</div>
+                    <h3 class="category-title">Non-Veg Pickles</h3>
+                </div>
+                <div class="pickle-grid">
+                    <div class="pickle-item"><span class="emoji">🍗</span><div><p class="telugu">చికెన్</p><p class="english">Chicken</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🐔</span><div><p class="telugu">దేశీ చికెన్</p><p class="english">Country Chicken</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🔥</span><div><p class="telugu">కొడి వేపుడు</p><p class="english">Chicken Fry</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🍖</span><div><p class="telugu">మటన్</p><p class="english">Mutton</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🐐</span><div><p class="telugu">దేశీ మటన్</p><p class="english">Country Mutton</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🐟</span><div><p class="telugu">చేప</p><p class="english">Fish</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🐟</span><div><p class="telugu">నాటు చేప</p><p class="english">Country Fish</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🍳</span><div><p class="telugu">చేప వేపుడు</p><p class="english">Fish Fry</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🦐</span><div><p class="telugu">రొయ్యలు</p><p class="english">Prawn</p></div></div>
+                    <div class="pickle-item"><span class="emoji">🦐</span><div><p class="telugu">ఉప్పు రొయ్యలు</p><p class="english">Salted Prawn</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pickle Process -->
+    <section class="section section-warm">
+        <div class="section-header reveal">
+            <span class="section-tag">👵 Village Kitchen</span>
+            <h2 class="section-title">From Our Village Kitchen to <span class="highlight">Your Home</span></h2>
+            <p class="section-desc">Traditional grandmother recipe, pure village process</p>
+        </div>
+        <div class="process-image reveal">
+            <img src="pickle-process.png" alt="Pickle Process">
+        </div>
+    </section>
+
+    <!-- Karam Section -->
+    <section class="section section-dark" id="karam">
+        <div class="section-header reveal">
+            <span class="section-tag">🌶️ Spice Powders</span>
+            <h2 class="section-title"><span class="highlight">Karam</span> Podulu</h2>
+            <p class="section-desc">Freshly ground spice powders to make your rice meals flavorful</p>
+        </div>
+        <div class="karam-grid">
+            <div class="karam-card reveal"><span class="emoji">🔥</span><p class="telugu">వేపుడు కారం</p><p class="english">Vepudu Karam</p></div>
+            <div class="karam-card reveal"><span class="emoji">🫘</span><p class="telugu">కందిపోడి</p><p class="english">Kandi Podi</p></div>
+            <div class="karam-card reveal"><span class="emoji">🥜</span><p class="telugu">పప్పులపోడి</p><p class="english">Pappula Podi</p></div>
+            <div class="karam-card reveal"><span class="emoji">✨</span><p class="telugu">నువ్వుల కారం</p><p class="english">Nuvvula Karam</p></div>
+            <div class="karam-card reveal"><span class="emoji">🥥</span><p class="telugu">కొబ్బరి కారం</p><p class="english">Kobbari Karam</p></div>
+            <div class="karam-card reveal"><span class="emoji">🍃</span><p class="telugu">కరివేపాకు</p><p class="english">Karivepaku</p></div>
+            <div class="karam-card reveal"><span class="emoji">🌿</span><p class="telugu">మునగాకు</p><p class="english">Munagaku</p></div>
+            <div class="karam-card reveal"><span class="emoji">🥬</span><p class="telugu">గోంగూర</p><p class="english">Gongura</p></div>
+            <div class="karam-card reveal"><span class="emoji">🌱</span><p class="telugu">పుదీనా</p><p class="english">Pudina</p></div>
+            <div class="karam-card reveal"><span class="emoji">🌿</span><p class="telugu">కొత్తిమీర</p><p class="english">Kothimeera</p></div>
+        </div>
+    </section>
+
+    <!-- Karam Process -->
+    <section class="section section-earthy">
+        <div class="section-header reveal">
+            <span class="section-tag">🌾 Traditional Method</span>
+            <h2 class="section-title">From Our Thota to <span class="highlight">Your Plate</span></h2>
+            <p class="section-desc">Chemical-free, organic harvest, grandma's village method</p>
+        </div>
+        <div class="process-image reveal">
+            <img src="karam-process.png" alt="Karam Process">
+        </div>
+    </section>
+
+    <!-- Contact Section - Premium background -->
+    <section class="section contact-section" id="contact">
+        <div class="section-header reveal">
+            <span class="section-tag" style="background: rgba(212, 165, 116, 0.2); color: var(--gold);">📞 Get In Touch</span>
+            <h2 class="section-title" style="color: var(--white);">Place Your <span class="highlight">Order</span></h2>
+            <p class="section-desc" style="color: rgba(255,255,255,0.7);">Select products & quantities - we'll deliver fresh to your doorstep!</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info reveal">
+                <h3>Contact Us</h3>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-text"><h4>Phone</h4><a href="tel:+917993822600">+91 79938 22600</a></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="contact-text"><h4>WhatsApp</h4><a href="https://wa.me/917993822600" target="_blank">+91 79938 22600</a></div>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text"><h4>Service Area</h4><p>Hyderabad & Surrounding</p></div>
+                </div>
+                <div class="delivery-section">
+                    <h4><i class="fas fa-truck"></i> Delivery Locations</h4>
+                    <div class="areas-grid">
+                        <span class="area-tag">Kukatpally</span>
+                        <span class="area-tag">KPHB</span>
+                        <span class="area-tag">Hitech City</span>
+                        <span class="area-tag">Madhapur</span>
+                        <span class="area-tag">Miyapur</span>
+                        <span class="area-tag">Gachibowli</span>
+                        <span class="area-tag">Kondapur</span>
+                        <span class="area-tag">Moosapet</span>
+                        <span class="area-tag">Chintal</span>
+                        <span class="area-tag">Manikonda</span>
+                        <span class="area-tag">Nizampet</span>
+                        <span class="area-tag">Bachupally</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://facebook.com/profile.php?id=61584456673929" target="_blank" class="social-btn fb"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/biyamkrishnagaririce" target="_blank" class="social-btn ig"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/110548513" target="_blank" class="social-btn li"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/@BIYAMKRISHNAGARIRICE" target="_blank" class="social-btn yt"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="order-form reveal">
+                <h3>🛒 Order Form</h3>
+                <p>Fill in details and select products</p>
+                <form id="orderForm">
+                    <div class="form-row">
+                        <div class="form-group"><label>Full Name *</label><input type="text" name="customerName" id="customerName" required placeholder="Your name"></div>
+                        <div class="form-group"><label>Phone Number *</label><input type="tel" name="customerPhone" id="customerPhone" required placeholder="Your phone"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Location *</label>
+                        <select name="customerLocation" id="customerLocation" required>
+                            <option value="">Select your area</option>
+                            <option value="Kukatpally">Kukatpally</option>
+                            <option value="KPHB">KPHB</option>
+                            <option value="Hitech City">Hitech City</option>
+                            <option value="Madhapur">Madhapur</option>
+                            <option value="Miyapur">Miyapur</option>
+                            <option value="Gachibowli">Gachibowli</option>
+                            <option value="Kondapur">Kondapur</option>
+                            <option value="Moosapet">Moosapet</option>
+                            <option value="Chintal">Chintal</option>
+                            <option value="Manikonda">Manikonda</option>
+                            <option value="Nizampet">Nizampet</option>
+                            <option value="Bachupally">Bachupally</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="products-selectors">
+                        <div class="products-selectors-title"><i class="fas fa-shopping-basket"></i> Select Products & Quantities</div>
+                        <div class="selector-grid">
+                            <div class="selector-item">
+                                <label><span class="emoji">🍚</span> Rice</label>
+                                <select name="productRice" id="productRice">
+                                    <option value="">Not Required</option>
+                                    <optgroup label="Brown Rice">
+                                        <option value="Brown Rice - 5kg">Brown Rice - 5kg</option>
+                                        <option value="Brown Rice - 25kg">Brown Rice - 25kg</option>
+                                        <option value="Brown Rice - 50kg">Brown Rice - 50kg</option>
+                                    </optgroup>
+                                    <optgroup label="Semi Polish Rice">
+                                        <option value="Semi Polish - 5kg">Semi Polish - 5kg</option>
+                                        <option value="Semi Polish - 25kg">Semi Polish - 25kg</option>
+                                        <option value="Semi Polish - 50kg">Semi Polish - 50kg</option>
+                                    </optgroup>
+                                    <optgroup label="Full Polish Rice">
+                                        <option value="Full Polish - 5kg">Full Polish - 5kg</option>
+                                        <option value="Full Polish - 25kg">Full Polish - 25kg</option>
+                                        <option value="Full Polish - 50kg">Full Polish - 50kg</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="selector-item">
+                                <label><span class="emoji">🫘</span> Urad Dal</label>
+                                <select name="productUrad" id="productUrad">
+                                    <option value="">Not Required</option>
+                                    <optgroup label="Split (Pappu)">
+                                        <option value="Urad Split - 1kg">Urad Split - 1kg</option>
+                                        <option value="Urad Split - 2kg">Urad Split - 2kg</option>
+                                        <option value="Urad Split - 5kg">Urad Split - 5kg</option>
+                                    </optgroup>
+                                    <optgroup label="Whole (Gundram)">
+                                        <option value="Urad Whole - 1kg">Urad Whole - 1kg</option>
+                                        <option value="Urad Whole - 2kg">Urad Whole - 2kg</option>
+                                        <option value="Urad Whole - 5kg">Urad Whole - 5kg</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="selector-item">
+                                <label><span class="emoji">🥒</span> Pickles</label>
+                                <select name="productPickles" id="productPickles">
+                                    <option value="">Not Required</option>
+                                    <optgroup label="Mango Pickles">
+                                        <option value="Avakaya - 250gm">Avakaya - 250gm</option>
+                                        <option value="Avakaya - 500gm">Avakaya - 500gm</option>
+                                        <option value="Avakaya - 1kg">Avakaya - 1kg</option>
+                                        <option value="Magaya - 250gm">Magaya - 250gm</option>
+                                        <option value="Magaya - 500gm">Magaya - 500gm</option>
+                                        <option value="Magaya - 1kg">Magaya - 1kg</option>
+                                    </optgroup>
+                                    <optgroup label="Veg Pickles">
+                                        <option value="Lemon - 250gm">Lemon - 250gm</option>
+                                        <option value="Lemon - 500gm">Lemon - 500gm</option>
+                                        <option value="Lemon - 1kg">Lemon - 1kg</option>
+                                        <option value="Gongura - 250gm">Gongura - 250gm</option>
+                                        <option value="Gongura - 500gm">Gongura - 500gm</option>
+                                        <option value="Gongura - 1kg">Gongura - 1kg</option>
+                                        <option value="Tomato - 250gm">Tomato - 250gm</option>
+                                        <option value="Tomato - 500gm">Tomato - 500gm</option>
+                                        <option value="Tomato - 1kg">Tomato - 1kg</option>
+                                    </optgroup>
+                                    <optgroup label="Non-Veg Pickles">
+                                        <option value="Chicken - 250gm">Chicken - 250gm</option>
+                                        <option value="Chicken - 500gm">Chicken - 500gm</option>
+                                        <option value="Chicken - 1kg">Chicken - 1kg</option>
+                                        <option value="Mutton - 250gm">Mutton - 250gm</option>
+                                        <option value="Mutton - 500gm">Mutton - 500gm</option>
+                                        <option value="Mutton - 1kg">Mutton - 1kg</option>
+                                        <option value="Prawn - 250gm">Prawn - 250gm</option>
+                                        <option value="Prawn - 500gm">Prawn - 500gm</option>
+                                        <option value="Prawn - 1kg">Prawn - 1kg</option>
+                                        <option value="Fish - 250gm">Fish - 250gm</option>
+                                        <option value="Fish - 500gm">Fish - 500gm</option>
+                                        <option value="Fish - 1kg">Fish - 1kg</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="selector-item">
+                                <label><span class="emoji">🌶️</span> Karam</label>
+                                <select name="productKaram" id="productKaram">
+                                    <option value="">Not Required</option>
+                                    <optgroup label="Kandi Podi">
+                                        <option value="Kandi Podi - 100gm">Kandi Podi - 100gm</option>
+                                        <option value="Kandi Podi - 250gm">Kandi Podi - 250gm</option>
+                                        <option value="Kandi Podi - 500gm">Kandi Podi - 500gm</option>
+                                    </optgroup>
+                                    <optgroup label="Pappula Podi">
+                                        <option value="Pappula Podi - 100gm">Pappula Podi - 100gm</option>
+                                        <option value="Pappula Podi - 250gm">Pappula Podi - 250gm</option>
+                                        <option value="Pappula Podi - 500gm">Pappula Podi - 500gm</option>
+                                    </optgroup>
+                                    <optgroup label="Nuvvula Karam">
+                                        <option value="Nuvvula Karam - 100gm">Nuvvula Karam - 100gm</option>
+                                        <option value="Nuvvula Karam - 250gm">Nuvvula Karam - 250gm</option>
+                                        <option value="Nuvvula Karam - 500gm">Nuvvula Karam - 500gm</option>
+                                    </optgroup>
+                                    <optgroup label="Kobbari Karam">
+                                        <option value="Kobbari Karam - 100gm">Kobbari Karam - 100gm</option>
+                                        <option value="Kobbari Karam - 250gm">Kobbari Karam - 250gm</option>
+                                        <option value="Kobbari Karam - 500gm">Kobbari Karam - 500gm</option>
+                                    </optgroup>
+                                    <optgroup label="Karivepaku Karam">
+                                        <option value="Karivepaku - 100gm">Karivepaku - 100gm</option>
+                                        <option value="Karivepaku - 250gm">Karivepaku - 250gm</option>
+                                        <option value="Karivepaku - 500gm">Karivepaku - 500gm</option>
+                                    </optgroup>
+                                    <optgroup label="Gongura Karam">
+                                        <option value="Gongura Karam - 100gm">Gongura Karam - 100gm</option>
+                                        <option value="Gongura Karam - 250gm">Gongura Karam - 250gm</option>
+                                        <option value="Gongura Karam - 500gm">Gongura Karam - 500gm</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Requirements</label>
+                        <textarea name="additionalNotes" id="additionalNotes" placeholder="Any other products or special requests..."></textarea>
+                    </div>
+                    <button type="button" id="submitBtn" class="form-submit"><i class="fab fa-whatsapp"></i> Send Order via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">🌾 <span>BIYAM KRISHNA GARI RICE</span></div>
+            <p class="footer-tagline">Pure Quality • No Mixing • No Middlemen • Direct from Farm</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#rice">Rice</a>
+                <a href="#urad">Urad</a>
+                <a href="#pickles">Pickles</a>
+                <a href="#karam">Karam</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 BIYAM KRISHNA GARI RICE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <div class="wa-float">
+        <a href="https://wa.me/917993822600?text=Hi! I want to order from BIYAM KRISHNA GARI RICE" target="_blank" class="wa-btn">
+            <i class="fab fa-whatsapp"></i>
+            <span>Order Now</span>
+        </a>
+    </div>
+
+    <script>
+        // Menu Toggle
+        function toggleMenu() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            const icon = document.querySelector('.menu-btn i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        }
+
+        // Navbar Scroll
+        window.addEventListener('scroll', function() {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Active Nav
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(function(section) {
+                if (window.scrollY >= section.offsetTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Close menu on link click
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-menu').classList.remove('active');
+                const icon = document.querySelector('.menu-btn i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        // Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // FIXED: Form Submit Handler - Using button click instead of form submit
+        document.getElementById('submitBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get form values directly
+            var customerName = document.getElementById('customerName').value;
+            var customerPhone = document.getElementById('customerPhone').value;
+            var customerLocation = document.getElementById('customerLocation').value;
+            var productRice = document.getElementById('productRice').value;
+            var productUrad = document.getElementById('productUrad').value;
+            var productPickles = document.getElementById('productPickles').value;
+            var productKaram = document.getElementById('productKaram').value;
+            var additionalNotes = document.getElementById('additionalNotes').value;
+
+            // Validation
+            if (!customerName || !customerPhone || !customerLocation) {
+                alert('Please fill in Name, Phone and Location');
+                return;
+            }
+
+            // Build order items
+            var orderItems = [];
+            
+            if (productRice && productRice.length > 0) {
+                orderItems.push('🍚 *Rice:* ' + productRice);
+            }
+            if (productUrad && productUrad.length > 0) {
+                orderItems.push('🫘 *Urad Dal:* ' + productUrad);
+            }
+            if (productPickles && productPickles.length > 0) {
+                orderItems.push('🥒 *Pickles:* ' + productPickles);
+            }
+            if (productKaram && productKaram.length > 0) {
+                orderItems.push('🌶️ *Karam:* ' + productKaram);
+            }
+
+            // Build message
+            var message = '🌾 *BIYAM KRISHNA GARI RICE*\n';
+            message += '━━━━━━━━━━━━━━━━\n';
+            message += '*📋 NEW ORDER*\n';
+            message += '━━━━━━━━━━━━━━━━\n\n';
+            message += '👤 *Name:* ' + customerName + '\n';
+            message += '📞 *Phone:* ' + customerPhone + '\n';
+            message += '📍 *Location:* ' + customerLocation + '\n\n';
+            
+            if (orderItems.length > 0) {
+                message += '🛒 *ORDER ITEMS:*\n';
+                message += '─────────────────\n';
+                for (var i = 0; i < orderItems.length; i++) {
+                    message += orderItems[i] + '\n';
+                }
+                message += '\n';
+            }
+            
+            if (additionalNotes && additionalNotes.length > 0) {
+                message += '📝 *Notes:* ' + additionalNotes + '\n\n';
+            }
+            
+            message += '━━━━━━━━━━━━━━━━\n';
+            message += '_Sent from website_';
+
+            // Open WhatsApp
+            var whatsappURL = 'https://wa.me/917993822600?text=' + encodeURIComponent(message);
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
